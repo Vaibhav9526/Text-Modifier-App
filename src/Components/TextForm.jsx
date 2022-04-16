@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TextForm = () => {
+const TextForm = (props) => {
   const [value, setvalue] = useState("");
   const onchangeHandler = (e) => {
     setvalue(e.target.value);
@@ -13,17 +13,17 @@ const TextForm = () => {
     let lowerTxt = value.toLowerCase();
     setvalue(lowerTxt);
   };
-  const Copy = async () => {
+
+  const copy = async () => {
     await navigator.clipboard.writeText(value);
-    document.getElementById("copy").innerHTML = "Copied 👍";
+    props.showAlert("Text Copied", "success");
   };
-  setTimeout(() => {
-    document.getElementById("copy").innerHTML = "Copy Text";
-  }, 3000);
   return (
     <>
+      <br />
       <div className="Main">
         <h1>Text Modifier</h1>
+        <br />
         <textarea
           name="mytext"
           onChange={onchangeHandler}
@@ -42,9 +42,10 @@ const TextForm = () => {
           Click Here For Lower Case
         </button>
         <br />
-        <button id="copy" onClick={Copy}>
+        <button id="copy" onClick={copy}>
           Copy Text
         </button>
+        <br />
       </div>
       <h1 id="words">Details</h1>
       <p>

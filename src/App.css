@@ -46,7 +46,7 @@ h1 {
   background: #443737;
   border-radius: 1vw;
   box-shadow: rgb(0 0 0 / 40%) 5px 5px;
-  width: 11rem;
+  width: 13rem;
 }
 p {
   text-align: center;
@@ -63,6 +63,14 @@ h2 {
   box-shadow: rgb(0 0 0 / 40%) 5px 5px;
   font-size: 1.4rem;
   margin-bottom: 0;
+}
+.announcement-top-bar {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
 }
 
 /* 💀*/
